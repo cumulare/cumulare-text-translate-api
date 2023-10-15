@@ -1,6 +1,5 @@
-
 class Translate:
-    """Used for translating images."""    
+    """Used for translating images."""
 
     def dict(self) -> None:
         """
