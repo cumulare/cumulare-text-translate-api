@@ -1,5 +1,5 @@
 class Translate:
 
-    def dict(self):
+    def dict(self) -> None:
         return None
 
