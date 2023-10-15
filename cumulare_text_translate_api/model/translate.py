@@ -5,6 +5,6 @@ class Translate:
 
         """
         Used for going through dic of images.
-        Returns success if all have been processed
+        :returns: success if all have been processed
         """
         return 200
