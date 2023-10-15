@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      target: prod
+    image: cumulare_text_translate_api:${CUMULARE_TEXT_TRANSLATE_API_VERSION:-latest}
+    restart: always
+    env_file:
+    - .env
+    environment:
+      CUMULARE_TEXT_TRANSLATE_API_HOST: 0.0.0.0
