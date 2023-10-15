@@ -1,1 +1,1 @@
-    """cumulare_text_translate_api."""
+"""cumulare_text_translate_api."""
