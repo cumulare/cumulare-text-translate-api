@@ -24,6 +24,7 @@ strawberry-graphql = { version = "^0.194.4", extras = ["fastapi"] }
 prometheus-client = "^0.17.0"
 prometheus-fastapi-instrumentator = "6.0.0"
 loguru = "^0.7.0"
+easyocr = "^1.7.1"
 
 
 [tool.poetry.dev-dependencies]
