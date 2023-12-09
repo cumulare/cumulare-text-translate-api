@@ -15,4 +15,10 @@ def translate_image(translate_req: TranslateModel):
     :return: Returns status code.
     :rtype: any
     """
-    return Translate.read_translated_img(translate_req)
+    result = 400
+    translte_val = Translate.read_translated_img(Translate, translate_req)
+
+    if translte_val is not None:
+        result = 200
+
+    return result
