@@ -5,6 +5,9 @@ from fastapi import FastAPI
 from fastapi.responses import UJSONResponse
 from fastapi.staticfiles import StaticFiles
 
+
+
+
 from cumulare_text_translate_api.logging import configure_logging
 from cumulare_text_translate_api.web.api.router import api_router
 from cumulare_text_translate_api.web.gql.router import gql_router
@@ -34,9 +37,24 @@ def get_app() -> FastAPI:
         default_response_class=UJSONResponse,
     )
 
+    # add longer timeout for slow requests
+    app.timeout_keep_alive = 60
+
     # Adds startup and shutdown events.
     register_startup_event(app)
+    from fastapi.middleware.cors import CORSMiddleware
+
     register_shutdown_event(app)
+
+    
+    # allow json responses
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["GET", "POST"],
+        allow_headers=["*"],
+    )
 
     # Main router for the API.
     app.include_router(router=api_router, prefix="/api")

@@ -25,6 +25,7 @@ prometheus-client = "^0.17.0"
 prometheus-fastapi-instrumentator = "6.0.0"
 loguru = "^0.7.0"
 easyocr = "^1.7.1"
+matplotlib = "^3.8.2"
 
 
 [tool.poetry.dev-dependencies]
